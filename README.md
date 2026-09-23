@@ -3,6 +3,10 @@
 A modular, multi-device WhatsApp bot built with Node.js and Baileys. It is designed for group management, automation, AI-powered interactions, media processing, and extensible command plugins.
 
 <div align="center">
+  <img src="assets/bempsx-md.png" alt="Solid Bot menu" width="1000" />
+</div>
+
+<div align="center">
 
 ![WhatsApp Bot](https://img.shields.io/badge/WhatsApp-Multi%20Device-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-339933?style=for-the-badge&logo=node.js&logoColor=white)
@@ -13,7 +17,7 @@ A modular, multi-device WhatsApp bot built with Node.js and Baileys. It is desig
 
 ## Overview
 
-This project is a full-featured WhatsApp companion bot for group chats and personal automation. It ships with an auto-loading plugin architecture, optional AI providers, media utilities, group moderation tools, and a flexible configuration model.
+This project is a full-featured WhatsApp companion bot for group chats and personal automation. It ships with an auto-loading plugin architecture, optional AI providers, media utilities, group moderation controls, and flexible deployment options.
 
 The bot is built to be easy to extend: new behaviors can be added by dropping a plugin into `src/plugins`, without having to wire up command registration manually.
 
@@ -179,7 +183,7 @@ npm run session:serve      # serve session-related helpers
 
 ## Deployment
 
-The project includes deployment support for common hosting providers and container workflows. The repo contains deployment-related files under `deploy/`, and the project is ready for containerized or cloud-hosted deployment with minimal changes.
+The project includes deployment support for common hosting providers and container workflows. The repo contains deployment-related files under `deploy/`, and the project is ready for containerized or remote deployment.
 
 ## Security and Best Practices
 
