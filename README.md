@@ -1,318 +1,211 @@
-<div align="center">
+# Solid Bot
 
-<!-- HERO BANNER -->
-<img src="assets/bempsx-md.png" alt="BempsX-Nova" width="100%" />
-
-<!-- ANIMATED LIVE DOT -->
-<p>
-  <img src="https://img.shields.io/badge/-online-25D366?style=for-the-badge" alt="online" height="22" />
-  &nbsp;
-  <code><b>MykelGoal</b> = <b>BEMPSX</b> · 🇳🇬</code>
-  &nbsp;
-  <img src="https://img.shields.io/badge/version-2.0.0-39ff14?style=for-the-badge" alt="v2" height="22" />
-</p>
-
-<div>
-  <img src="https://img.shields.io/badge/commands-389%2B-9b5de5?style=for-the-badge" alt="commands" height="26"/>
-  <img src="https://img.shields.io/badge/categories-19-ff5c8a?style=for-the-badge" alt="categories" height="26"/>
-  <img src="https://img.shields.io/badge/node-%3E%3D20-blue?style=for-the-badge&logo=node.js" alt="node" height="26"/>
-  <img src="https://img.shields.io/badge/whatsapp-multi--device-25D366?style=for-the-badge&logo=whatsapp" alt="wa" height="26"/>
-</div>
-
-<br/>
-
-> ## 🐍 **"The snake that bites back — real commands, no fakes."**
-
-</div>
-
----
-
-## ✦ What Is **BempsX-Nova**?
-
-**BempsX-Nova** is a **production-grade, multi-device WhatsApp bot** built on the modern **Baileys** engine. It ships with **389+ real commands** across **19 categories** — clean modular code, one central config, honest output, free APIs.
-
-It's built like a real dev builds it. Not a spaghetti clone.
-
----
-
-## ⁉️ Why It's Different
-
-| | 🐍 **BempsX-Nova** | 🧟 Typical copied bots |
-|---|---|---|
-| **Real commands** | Every command does what it says | Stub / placeholder replies |
-| **Modular** | `plugins/` + `lib/` + `apis/` | One giant file |
-| **Keys** | Baked-in → forks need **2 fields** | Users sign up for 5 services |
-| **Honest** | "Set YOUTUBE_KEY to enable" — never fakes | Fakes a "download" |
-| **Cost** | **All free** | Paid API quota |
-
----
-
-## 🚀 One-Click Deploy
+A modular, multi-device WhatsApp bot built with Node.js and Baileys. It is designed for group management, automation, AI-powered interactions, media processing, and extensible command plugins.
 
 <div align="center">
 
-&nbsp;
-<a href="https://railway.app/new/template?template=">
-  <img src="https://railway.app/button.svg" alt="Deploy on Railway" width="180" />
-</a>
-&nbsp;
-<br/><br/>
-
-<a href="https://heroku.com/deploy?template=">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" width="180" />
-</a>
-&nbsp;
-<a href="https://fly.io/launch">
-  <img src="https://img.shields.io/badge/deploy%20on-fly.io-7d3cff?style=for-the-badge&logo=flydotio&logoColor=white" alt="Fly.io" height="58" />
-</a>
-&nbsp;
-<a href="https://hub.docker.com">
-  <img src="https://img.shields.io/badge/docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" height="58" />
-</a>
+![WhatsApp Bot](https://img.shields.io/badge/WhatsApp-Multi%20Device-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D20-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Baileys](https://img.shields.io/badge/Baileys-WhatsApp%20Socket-000000?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </div>
 
----
+## Overview
 
-## ⚡ Quick Start
+This project is a full-featured WhatsApp companion bot for group chats and personal automation. It ships with an auto-loading plugin architecture, optional AI providers, media utilities, group moderation tools, and a flexible configuration model.
 
-> **Fork → set 2 values → run.** That's literally it.
+The bot is built to be easy to extend: new behaviors can be added by dropping a plugin into `src/plugins`, without having to wire up command registration manually.
+
+## Highlights
+
+- Multi-device WhatsApp support via Baileys
+- Auto-loaded modular plugins
+- Group moderation and anti-link controls
+- AI provider support (`gemini`, `openai`, `deepseek`, `groq`, `mistral`, `cohere`, `together`)
+- Media conversion, download, and image processing helpers
+- Fun commands, games, economy features, and utility tools
+- Optional database backends: MongoDB, PostgreSQL, MySQL
+- Session pairing flow with saved WhatsApp credentials
+- Local JSON fallback when a database is not configured
+
+## Tech Stack
+
+- JavaScript / ES modules
+- Node.js 20+
+- Baileys
+- dotenv for environment config
+- Optional database drivers for MongoDB, PostgreSQL, and MySQL
+- ffmpeg-static and sharp for media handling
+
+## Project Structure
+
+```text
+solid-bot/
+├── index.js                  # bot startup and lifecycle
+├── settings.js               # runtime settings / env config
+├── .env.example              # environment template
+├── assets/                   # branding and static assets
+├── src/
+│   ├── apis/                 # API integrations and helpers
+│   ├── config/               # configuration helpers
+│   ├── core/                 # socket lifecycle and system runtime
+│   ├── handlers/             # message and group event handlers
+│   ├── lib/                  # shared logic, storage, secrets, banners, etc.
+│   └── plugins/              # auto-loaded plugins by category
+├── scripts/                  # setup, testing, and maintenance utilities
+├── servers/                  # local server helpers and session utilities
+├── deploy/                   # deployment assets and environment helpers
+├── docs/                     # documentation and notes
+├── package.json              # project scripts and dependencies
+├── test-run.mjs              # smoke test runner
+├── agent-test.mjs            # agent verification script
+├── README.md                 # project documentation
+├── .gitignore
+├── .env.example
+└── LICENSE                   # if present in your branch
+```
+
+## Prerequisites
+
+- Node.js 20 or newer
+- npm
+- A WhatsApp account for pairing or session authentication
+- Optional API keys for AI and other provider features
+
+## Quick Start
 
 ```bash
-# 1. Clone
-git clone 
-cd bempsx-nova-bot
-
-# 2. Install (auto-fetches FREE yt-dlp — no paid downloader key)
+git clone https://github.com/nkojo441-bit/solid-bot.git
+cd solid-bot
 npm install
-
-# 3. Configure — OWNER_NUMBER is required for owner controls; pairing asks separately for the bot number
 cp .env.example .env
 ```
 
-Open `.env` → set ⭐ **`OWNER_NUMBER`** and, when using a saved session, **`SESSION_ID`**. For AI commands, also set the API key for the selected **`AI_PROVIDER`**.
+Then edit `.env` and set at least the essentials:
+
+```env
+OWNER_NUMBER=233500835166
+SESSION_ID=
+SESSION_API=
+AI_PROVIDER=gemini
+GEMINI_API_KEY=
+```
+
+Start the bot:
 
 ```bash
-# 4. Run
 npm start
 ```
 
-> 🧪 Want a **pairing code** instead of a session string?
-> ```bash
-> npm run pair
-> ```
-
-> **If pairing does not work:** make sure no old `session/` directory is being reused, then run:
-> ```bash
-> npm run reset-session
-> npm run pair
-> ```
-> Enter the WhatsApp number with the country code and **digits only** (for example `233500835166`). The pairing startup no longer depends on a separate Baileys version lookup, so it can proceed even when that lookup is blocked or hangs.
-> On WhatsApp open **Settings → Linked devices → Link a device → Link with phone number**, then enter the code printed by the bot.
-> Keep the bot process running until it reports `Connected`.
-
----
-
-## 🗺️ Command Browser — 389+ Commands
-
-<details>
-<summary><b>🤖 AI & Gemini — 17</b></summary>
-
-`ai` `aistatus` `summarize` `translate` `imagine` `aisearch` `chatbot` `coder` `cohere` `deepseek` `gemini` `gpt` `grammar` `groq` `mistral` `together` `reasoning`
-
-> `.ai anything` · `.imagine a cyberpunk city` · `.coder write a risk game`
-</details>
-
-<details>
-<summary><b>🎭 Anime — 28</b></summary>
-
-`anime` `animequote` `manga` `topanime` `airing` `animegif` `animenews` `animerec` `character` `animereac` `neko` `hug` `kiss` `pat` `slap` `smug` `cuddle` `tickle` `feed` `punch` `cry` `laugh` `happy` `sad` `angry` `baka` `awoo` `waifu`
-</details>
-
-<details>
-<summary><b>⚙️ Bot — 33</b></summary>
-
-`alwaysonline` `owner` `restart` `runtime` `shutdown` `stats` `uptime` `antidelete` `autotyping` `cmdreact` `ignore` `p-status` `rejectcall` `reload` `startupmsg` `update` `akick` `allow` `allow-gcadd` `antieditinfo` `banlist` `delmod` `delsudo` `events` `getmods` `getsudo` `gfilter` `listfilters` `permit` `reset` `setmod` `setsudo`
-</details>
-
-<details>
-<summary><b>🎛️ Config — 7</b></summary>
-
-`allvar` `delvar` `getvar` `mode` `setvar` `delkey` `setkey`
-
-> ⭐ `.setvar KEY value` changes settings **live**, no redeploy.
-</details>
-
-<details>
-<summary><b>🔧 Converter — 23</b></summary>
-
-`doc` `ptv` `take` `tomp3` `tovn` `sticker` `toimage` `bass` `vibrato` `robot` `echo` `chipmunk` `slow` `fast` `nightcore` `fat` `squirrel` `8d` `tovideo` `vv` `vvpr` `pdf` `tovv`
-</details>
-
-<details>
-<summary><b>📣 Core — 6</b></summary>
-
-`guard` `wall` `whoami` `info` `menu` `ping`
-</details>
-
-<details>
-<summary><b>⬇️ Downloaders — 14</b></summary>
-
-`lyrics` `play` `video` `tiktok` `instagram` `youtube` `twitter` `spotify` `facebook` `mediafire` `gdrive` `pint` `apk` `shazam`
-
-> **Free** via bundled `yt-dlp`. `.play <song>` = audio, `.video <url>` = video.
-</details>
-
-<details>
-<summary><b>💰 Economy — 39</b></summary>
-
-`bank` `beg` `deposit` `loan` `payloan` `rob` `withdraw` `bankrob` `bankupgrade` `blackjack` `economy` `tax` `addmoney` `coinflip` `crime` `dice` `fish` `mine` `networth` `poor` `resetecon` `rps` `sell` `streak` `casino` `heist` `hunt` `profile` `toprank` `balance` `daily` `gamble` `give` `slots` `top` `work` `buy` `inventory` `shop`
-
-> Full persistent economy — wallets, banks, loans, jobs, shop, heists, blackjack, slots.
-</details>
-
-<details>
-<summary><b>😄 Fun — 53</b></summary>
-
-`lick` `bite` `poke` `pinch` `dance` `wave` `wink` `blush` `pout` `shy` `shrug` `stare` `mad` `cool` `scared` `nervous` `confused` `sleep` `yawn` `thumbsup` `facepalm` `celebrate` `clap` `thanks` `love` `handhold` `evillaugh` `dare` `smack` `brofist` `fist` `country` `crypto` `emojimix` `insult` `joke` `pickupline` `ship` `choose` `8ball` `flipcoin` `lovescore` `rate` `truth` `bible` `duck` `fox` `meow` `ngl` `pokemon` `urban` `woof` `wyr`
-</details>
-
-<details>
-<summary><b>🎮 Game — 6</b></summary>
-
-`ttt` `delttt` `guess` `hangman` `delhangman` `trivia`
-
-> Real in-chat games: Tic-Tac-Toe, Hangman, Guess-the-number, Trivia.
-</details>
-
-<details>
-<summary><b>👥 Group — 46</b></summary>
-
-`antiedit` `antieditchat` `antigcstatus` `antigm` `creategc` `gcstatus` `gdesc` `gname` `gpp` `groupguard` `listadmin` `listoffline` `listonline` `mute-user` `removepp` `revoke` `tkick` `unmute-user` `antibot` `antiword` `antispam` `antitag` `antilink` `add` `demote` `ginfo` `kick` `poll` `promote` `tagall` `ban` `unban` `unwarn` `warn` `warnlist` `goodbye` `invite` `kickall` `kickr` `leave` `lock` `mute` `tag` `unlock` `unmute` `welcome`
-</details>
-
-<details>
-<summary><b>🎨 Image & Effects — 28</b></summary>
-
-`black` `circlestk` `compress` `exif` `gif` `mp4` `photo` `roundstk` `white` `wm` `carbon` `wasted` `rip-meme` `trigger-meme` `rainbow` `mnm` `jailbars` `stonks` `wanted` `greyscale` `sepia` `negate` `pixelate` `blur` `invert` `rotate` `flop` `enhance`
-</details>
-
-<details>
-<summary><b>🧾 Misc & Search — 12</b></summary>
-
-`advice` `fact` · `imageinfo` `ytinfo` `ytsearch` `gitclone` `img` `wallpaper` `websearch` `book` `github` `npm`
-</details>
-
-<details>
-<summary><b>🔐 Privacy — 12</b></summary>
-
-`archive` `delete` `lastseen` `mute-chat` `mypp` `mystatus` `online` `pinchat` `presence` `read` `unarchive` `unpinchat`
-</details>
-
-<details>
-<summary><b>✨ Textmaker — 8</b></summary>
-
-`textmaker` `neonlight` `hacker` `glitch` `galaxy` `fire` `gaming` `metallic`
-
-> Real SVG + sharp text art — no external image API.
-</details>
-
-<details>
-<summary><b>🧰 Tools — 21</b></summary>
-
-`qr` `dev` `locate` `delcmd` `delcmds` `listcmd` `setcmd` `afk` `font` `getdevice` `mention` `msgs` `quote` `readmore` `tts` `catfact` `currency` `define` `shorten` `weather` `wiki`
-</details>
-
-<details>
-<summary><b>👤 User — 8</b></summary>
-
-`bio` `block` `blocklist` `clearchat` `pp` `setname` `setpp` `unblock`
-</details>
-
-<details>
-<summary><b>📙 Utils — 28</b></summary>
-
-`addnote` `allnotes` `delnote` `getnote` `biner` `calc` `ip` `jid` `random` `time` `unbiner` `delallnote` `forward` `gift` `join` `likestatus` `plugin` `privacy` `qrcode` `quoted` `reactions` `savestatus` `statusinfo` `areact` `element` `quotedinfo` `rolldice` `tinyurl`
-</details>
-
----
-
-## 🛠️ Architecture
-
-```
-bempsx-nova-bot/
-├── index.js               # boot + lifecycle
-├── settings.js            # central config (.env + defaults)
-├── .env.example           # complete deployment/local environment template
-├── assets/                # branding / images
-├── src/
-│   ├── apis/              # real API clients (ai, anime, free, downloader, translate)
-│   ├── config/keys.js     # ⭐ bake your API keys here (single place)
-│   ├── core/              # socket (Baileys) + keeper (health server)
-│   ├── handlers/          # command dispatch, message pipeline, group events
-│   ├── lib/               # secrets, database, economy, media, textfx, banner…
-│   └── plugins/           # ⇢ drop a file → auto-loads (389 commands)
-├── scripts/setup.js       # fetches FREE yt-dlp on install
-└── deploy/                # render / docker / fly / koyeb / heroku / app.json
-```
-
-> **Truly modular:** any `.js` in `src/plugins/` that exports a plugin auto-loads. Zero wiring.
-
----
-
-## 🔑 Configuration
-
-| Env | Purpose |
-|---|---|
-| `AI_PROVIDER` | `gemini / groq / openai / …` (default `gemini`) |
-| `GEMINI_MODEL` | override the AI model |
-| `BOT_API_KEY` / `GATEWAY_URL` | optional one-key gateway |
-| `DATABASE_URL` | PostgreSQL/MySQL/Mongo — empty = local JSON |
-| `ANTI_LINK` / `WELCOME` / `AUTO_READ` | behaviour toggles |
-| `REASSERT_MS` | how often the ownership banner re-prints |
-
-> `.env.example` contains the complete environment template. API keys and session credentials are intentionally blank; do not commit real secrets.
-
----
-
-## 🚨 Ownership & License
-
-```text
-【 BempsX-Nova 】 is the property of MY KEL GOAL (BEMPSX).
-
-Fork users MAY run & deploy it. You may NOT:
-  • rename it and claim you built it
-  • re-upload the source under your name
-  • strip the branding / ownership notice and resell it
-
-The bot re-asserts ownership on deploy, on a timer, and when branding is changed.
-```
-
-Distributed free for the community. No warranty. Use responsibly.
-
----
-
-<div align="center">
-
-### 🐍 Built with 🔥 by **MY KEL GOAL** ( **BEMPSX** )
-
-*BempsX-Nova — not yours, but free for the community.*
-
-</div>
-
-## WhatsApp phone-number pairing
-
-Pairing is intentionally isolated from the main bot startup. `npm run pair` runs `scripts/pair.js`, which clears only the local `session/` directory, asks for the phone number, creates a dedicated Baileys socket, requests one pairing code, and waits for WhatsApp to confirm the link.
+For a phone-number pairing flow instead of a stored session:
 
 ```bash
 npm run pair
 ```
 
-Enter the full international number using digits only, for example `233500835166`.
-Do not include `+`, spaces, parentheses, or dashes.
+## Configuration
 
-After the code appears, use WhatsApp → Settings → Linked devices → Link a device → Link with phone number.
+The bot reads runtime values from `.env`, with defaults provided in `.env.example`.
 
-Once the terminal reports `WhatsApp connection opened. Device is linked.`, stop the pairing command and run `npm start`.
+### Common environment variables
 
-The pairing command does not load plugins, the database, the HTTP keep-alive server, AI modules, or the normal message handlers. This keeps pairing independent from the rest of the application.
+| Variable | Purpose |
+| --- | --- |
+| `OWNER_NUMBER` | Primary owner number used for admin controls |
+| `PAIRING_NUMBER` | Optional prefilled number during pairing |
+| `SESSION_ID` | Saved WhatsApp session identifier |
+| `SESSION_API` | Session server URL for short session workflows |
+| `AI_PROVIDER` | Provider selection such as `gemini`, `openai`, or `groq` |
+| `GEMINI_API_KEY` / `OPENAI_API_KEY` | API credentials for AI features |
+| `DATABASE_URL` | Optional MongoDB/PostgreSQL/MySQL connection string |
+| `ANTI_LINK` | Enables link blocking behavior |
+| `WELCOME` | Enables group welcome messages |
+| `AUTO_READ` | Automatically marks incoming messages as read |
+| `PORT` | App server port |
+| `LOG_LEVEL` | Logging verbosity |
+
+For the full list, review `.env.example` before production deployment.
+
+## Pairing and Sessions
+
+The project supports multiple session strategies:
+
+1. Interactive pairing via `npm run pair`
+2. Saved session ID and session server API values
+3. Local session credentials generated during a successful link flow
+
+If the session becomes invalid or stale, clear it and pair again:
+
+```bash
+npm run reset-session
+npm run pair
+```
+
+When pairing, enter the WhatsApp number in international format without spaces, plus signs, or dashes.
+
+## Available Functionality
+
+The repository includes a broad plugin set covering many day-to-day bot tasks. Some examples include:
+
+- AI and assistant commands
+- Media converters and editors
+- Downloader utilities
+- Group management tools
+- Game and social commands
+- Utility commands and text transformations
+- Economy, leaderboard, and stats features
+- Privacy and chat control options
+
+## Useful Scripts
+
+```bash
+npm start                 # start the bot
+npm run dev               # run with file watching
+npm run pair               # pair a device with WhatsApp
+npm run reset-session      # clear stored session data
+npm run test               # run automated project tests
+npm run lint               # lint the project
+npm run test:smoke         # smoke tests
+npm run session:serve      # serve session-related helpers
+```
+
+## Development Notes
+
+- New commands can be added by creating a plugin file under `src/plugins`.
+- The plugin loader automatically discovers `.js` files and registers them on boot.
+- Plugin categories are inferred from the folder structure unless explicitly set in the exported object.
+- The project supports local JSON storage by default when no database is configured.
+
+## Deployment
+
+The project includes deployment support for common hosting providers and container workflows. The repo contains deployment-related files under `deploy/`, and the project is ready for containerized or cloud-hosted deployment with minimal changes.
+
+## Security and Best Practices
+
+- Never commit `.env` files with live credentials
+- Protect API keys and session tokens
+- Use a dedicated WhatsApp number for bots when possible
+- Review and restrict any admin controls exposed to group owners
+
+## License
+
+This project is distributed under the MIT license, as defined in the package metadata.
+
+## Contributing
+
+Contributions are welcome. If you’re improving functionality, commands, or documentation:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run the relevant tests or smoke checks
+5. Open a pull request with a clear summary
+
+## Support
+
+If you run into pairing or session issues, review the project’s pairing troubleshooting notes and verify your environment variables before restarting the bot.
+
+---
+
+Built for flexible WhatsApp automation, group features, and easy extensibility.
