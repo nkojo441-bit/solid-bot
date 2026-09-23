@@ -1,0 +1,34 @@
+{
+  "name": "bempsx-nova-bot",
+  "description": "BempsX-Nova — WhatsApp bot",
+  "keywords": [
+    "whatsapp",
+    "baileys",
+    "bot",
+    "multi-device",
+    "bempsx-nova"
+  ],
+  "logo": "",
+  "env": {
+    "SESSION_ID": {
+      "description": "Optional portable BempsX session credential. Not required when using interactive pairing.",
+      "required": false,
+      "value": ""
+    },
+    "OWNER_NUMBER": {
+      "description": "Owner WhatsApp number, independent from the paired bot number. International format.",
+      "required": true,
+      "value": "233500835166"
+    },
+    "BOT_NAME": {
+      "description": "Bot display name.",
+      "value": "BempsX-Nova"
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}

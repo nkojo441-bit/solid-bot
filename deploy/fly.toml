@@ -1,0 +1,16 @@
+app = "bempsx-nova-bot"
+primary_region = "fra"
+
+[build]
+  builder = "paketobuildpacks/builder:base"
+
+[env]
+  BOT_NAME = "BempsX-Nova"
+  PORT = "3000"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1

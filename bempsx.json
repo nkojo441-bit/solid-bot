@@ -1,0 +1,35 @@
+{
+  "name": "BempsX-Nova",
+  "description": "A high-performance, multi-device WhatsApp bot built on Baileys. Clean, modular, extensible.",
+  "author": "BempsX-Nova",
+  "logo": "",
+  "keywords": [
+    "bempsx-nova",
+    "whatsapp-bot",
+    "baileys",
+    "multi-device",
+    "nodejs"
+  ],
+  "env": {
+    "SESSION_ID": {
+      "description": "Secure authentication session string used to connect the bot to WhatsApp without QR scanning.",
+      "required": true,
+      "value": ""
+    },
+    "OWNER_NUMBER": {
+      "description": "Primary administrator WhatsApp number in international format (e.g. 2348012345678).",
+      "required": true,
+      "value": "2348012345678"
+    },
+    "DATABASE_URL": {
+      "description": "Optional. MongoDB/Postgres/MySQL URI for persistent storage. Leave empty for local JSON.",
+      "required": false,
+      "value": ""
+    },
+    "BOT_NAME": {
+      "description": "Display name of the bot.",
+      "required": false,
+      "value": "BempsX-Nova"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "bempsx-nova-bot",
+  "env": {
+    "SESSION_ID": { "required": true },
+    "OWNER_NUMBER": { "required": true },
+    "BOT_NAME": { "value": "BempsX-Nova" }
+  },
+  "build": { "builder": "nixpacks" },
+  "ports": { "http": 3000 }
+}

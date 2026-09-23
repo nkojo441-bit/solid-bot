@@ -1,0 +1,66 @@
+{
+  "name": "bempsx-nova-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "BempsX-Nova \u2014 a high-performance, multi-device WhatsApp bot built on Baileys. Clean, modular, extensible.",
+  "author": "BempsX-Nova",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "assets": "src/assets",
+    "lib": "src/lib",
+    "data": "data",
+    "plugins": "src/plugins"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "bempsx-nova",
+    "whatsapp-bot",
+    "whatsapp",
+    "baileys",
+    "gpt",
+    "gemini",
+    "multi-device"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "start:optimized": "node --max-old-space-size=512 --optimize-for-size --gc-interval=100 index.js",
+    "dev": "node --watch index.js",
+    "pair": "node scripts/pair.js",
+    "test": "npm run test:registry && cross-env SKIP_NETWORK=1 node test-run.mjs && node agent-test.mjs",
+    "test:smoke": "node test-run.mjs",
+    "lint": "node scripts/lint.mjs",
+    "test:registry": "node scripts/test-registry.mjs",
+    "test:session": "node scripts/test-session-flow.mjs",
+    "reset-session": "node -e \"import('fs').then(f=>f.default.rmSync('./session',{recursive:true,force:true})).then(()=>console.log('Session cleared!'))\"",
+    "setup:ytdlp": "node scripts/setup.js",
+    "postinstall": "node scripts/setup.js",
+    "diagnose:pair": "node scripts/diagnose-pairing.mjs",
+    "pair:clean": "node scripts/pair.js",
+    "pair:qr": "node index.js --show-qr",
+    "session:serve": "node servers/session-server.js",
+    "session:gen-token": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\"",
+    "session:test-flow": "node scripts/test-session-flow.mjs"
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "baileys": "6.7.24",
+    "dotenv": "^17.4.2",
+    "ffmpeg-static": "^5.3.0",
+    "file-type": "^22.0.2",
+    "pino": "^10.3.1",
+    "qrcode-terminal": "^0.12.0",
+    "sharp": "^0.33.5",
+    "baileys-pairing": "npm:baileys@7.0.0-rc13"
+  },
+  "optionalDependencies": {
+    "mongodb": "^6.10.0",
+    "pg": "^8.13.0",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
